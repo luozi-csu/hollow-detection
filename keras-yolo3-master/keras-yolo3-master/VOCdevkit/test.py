@@ -1,10 +1,13 @@
 import os
 import random
 
-trainval_percent = 0.1
-train_percent = 0.9
-xmlfilepath = 'C:/Users/Laona--LJJ/PycharmProjects/pythonProject7/VOC2007/Annotations'
-txtsavepath = 'ImageSets/main'
+trainval_percent = 0.9
+train_percent = float(8 / 9)
+script_path = os.getcwd()
+# xmlfilepath = 'C:/Users/Laona--LJJ/PycharmProjects/pythonProject7/VOC2007/Annotations'
+xmlfilepath = os.path.join(script_path, "VOC2007/Annotations")
+# txtsavepath = 'ImageSets/main'
+txtsavepath = os.path.join(script_path, "VOC2007/ImageSets/main")
 total_xml = os.listdir(xmlfilepath)
 
 num = len(total_xml)
@@ -24,11 +27,11 @@ for i in list:
     if i in trainval:
         ftrainval.write(name)
         if i in train:
-            ftest.write(name)
+            ftrain.write(name)
         else:
             fval.write(name)
     else:
-        ftrain.write(name)
+        ftest.write(name)
 
 ftrainval.close()
 ftrain.close()

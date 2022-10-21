@@ -38,7 +38,7 @@ def train(model, annotation_path, input_shape, anchors, num_classes, log_dir='lo
             steps_per_epoch=max(1, num_train//batch_size),
             validation_data=data_generator_wrap(lines[num_train:], batch_size, input_shape, anchors, num_classes),
             validation_steps=max(1, num_val//batch_size),
-            epochs=500,
+            epochs=1,
             initial_epoch=0)
     model.save_weights(log_dir + 'trained_weights.h5')
 

@@ -3,10 +3,10 @@ from os import getcwd
 
 sets=[('2007', 'train'), ('2007', 'val'), ('2007', 'test')]
 
-classes = ["barrier"]
+classes = ["pothole"]
 
 def convert_annotation(year, image_id, list_file):
-    in_file = open('C:/Users/Laona--LJJ/Downloads/keras-yolo3-master/keras-yolo3-master/yolo3/VOCdevkit/VOC%s/Annotations/%s.xml'%(year, image_id))
+    in_file = open('C:/Users/luozi/Desktop/gitplace/hollow-detection/keras-yolo3-master/keras-yolo3-master/VOCdevkit/VOC%s/Annotations/%s.xml'%(year, image_id))
     tree=ET.parse(in_file)
     root = tree.getroot()
 
@@ -23,8 +23,8 @@ def convert_annotation(year, image_id, list_file):
 wd = getcwd()
 
 for year, image_set in sets:
-    image_ids = open('C:/Users/Laona--LJJ/Downloads/keras-yolo3-master/keras-yolo3-master/yolo3/VOCdevkit/VOC%s/ImageSets/main/%s.txt'%(year, image_set)).read().strip().split()
-    list_file = open('%s_%s.txt'%(year, image_set), 'w')
+    image_ids = open('C:/Users/luozi/Desktop/gitplace/hollow-detection/keras-yolo3-master/keras-yolo3-master/VOCdevkit/VOC%s/ImageSets/main/%s.txt'%(year, image_set)).read().strip().split()
+    list_file = open('%s.txt'%(image_set), 'w')
     for image_id in image_ids:
         list_file.write('%s/VOCdevkit/VOC%s/JPEGImages/%s.png'%(wd, year, image_id))
         convert_annotation(year, image_id, list_file)
