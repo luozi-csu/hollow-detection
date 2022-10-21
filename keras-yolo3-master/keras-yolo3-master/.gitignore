@@ -106,3 +106,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+./tmp_gt_files
+./tmp_gt_files_org
+./yolo_logs
