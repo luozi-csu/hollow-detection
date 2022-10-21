@@ -1,0 +1,6 @@
+C:\Users\Laona--LJJ\Downloads\keras-yolo3-master\keras-yolo3-master/VOCdevkit/VOC2007/JPEGImages/127.png 96,54,439,278,0
+C:\Users\Laona--LJJ\Downloads\keras-yolo3-master\keras-yolo3-master/VOCdevkit/VOC2007/JPEGImages/129.png 276,157,371,212,0 3,208,318,300,0 3,139,152,177,0 166,114,209,129,0 72,106,138,115,0 65,92,110,101,0 71,101,128,108,0 2,130,36,139,0 3,110,45,122,0 2,101,42,109,0 1,93,36,101,0 254,131,370,157,0 384,143,445,190,0
+C:\Users\Laona--LJJ\Downloads\keras-yolo3-master\keras-yolo3-master/VOCdevkit/VOC2007/JPEGImages/207.png 60,66,149,75,0 83,80,161,101,0 2,112,147,131,0 33,142,260,185,0 12,192,291,276,0
+C:\Users\Laona--LJJ\Downloads\keras-yolo3-master\keras-yolo3-master/VOCdevkit/VOC2007/JPEGImages/250.png 169,216,334,286,0
+C:\Users\Laona--LJJ\Downloads\keras-yolo3-master\keras-yolo3-master/VOCdevkit/VOC2007/JPEGImages/384.png 130,126,282,212,0
+C:\Users\Laona--LJJ\Downloads\keras-yolo3-master\keras-yolo3-master/VOCdevkit/VOC2007/JPEGImages/95.png 166,158,239,219,0

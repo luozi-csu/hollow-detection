@@ -1,0 +1,26 @@
+<annotation verified="yes">
+	<folder>JPEGImages</folder>
+	<filename>12.png</filename>
+	<path>C:/Users/Laona--LJJ/PycharmProjects/pythonProject7/demo_barrier/JPEGImages/12.xml</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>447</width>
+		<height>300</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>barrier</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>107</xmin>
+			<ymin>60</ymin>
+			<xmax>333</xmax>
+			<ymax>221</ymax>
+		</bndbox>
+	</object>
+</annotation>
