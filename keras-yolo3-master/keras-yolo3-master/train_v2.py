@@ -63,7 +63,7 @@ class Yolo(object):
 
         # training batch size
         self.step1_batch_size = 32
-        self.step2_batch_size = 8  # note that more GPU memory is required after unfreezing the body
+        self.step2_batch_size = 32  # note that more GPU memory is required after unfreezing the body
         self.is_tiny_version = len(self.anchors) == 6  # default setting
         if self.is_tiny_version:
             self.yolo_model, self.yolo_body = self.create_model_tiny(yolo_weights_path='model_data/tiny_yolo_weights.h5')
@@ -95,7 +95,7 @@ class Yolo(object):
 
         # Evaluate setting parameter
         self.score = 0.3
-        self.iou = 0.45
+        self.iou = 0.5
         self.input_image_shape = K.placeholder(shape=(2, ))
         self.boxes, self.scores, self.classes, self.eval_inputs = yolo_eval_v2(self.yolo_body.output_shape, self.anchors,
                                                                                len(self.class_names), self.input_image_shape,

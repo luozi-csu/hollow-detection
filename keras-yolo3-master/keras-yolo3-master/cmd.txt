@@ -1,0 +1,1 @@
+python train_v2.py --anchors_file "./model_data/yolo_anchors.txt" --yolo_train_file "./train.txt" --yolo_val_file "./val.txt"

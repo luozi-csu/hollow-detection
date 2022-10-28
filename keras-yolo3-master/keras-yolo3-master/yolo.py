@@ -210,3 +210,41 @@ def detect_video(yolo, video_path, output_path=""):
             break
     yolo.close_session()
 
+import glob
+import shutil
+def detect_image(yolo, path, outdir):
+    for pngfile in glob.glob(path):
+        img = Image.open(pngfile)
+        img = yolo.detect_image(img)
+        img.save(os.path.join(outdir, os.path.basename(pngfile)))
+    yolo.close_session()
+
+def copy_test_image():
+    script_path = os.getcwd()
+    all_image_path = os.path.join(script_path, "VOCdevkit/VOC2007/JPEGImages")
+    test_image_path = os.path.join(script_path, "VOCdevkit/VOC2007/ImageSets/testImages")
+    test_txt = os.path.join(script_path, "VOCdevkit/VOC2007/ImageSets/main/test.txt")
+    file = open(test_txt)
+    content = file.read()
+    image_names = content.split("\n")
+    name_set = set(image_names)
+    # print("imagenames: ", image_names)
+    # print("nameset: ", name_set)
+    all_names = os.listdir(all_image_path)
+    # print(all_names)
+    for name in all_names:
+        name = name[:-4]
+        if name in name_set:
+            png_name = name + ".png"
+            shutil.copyfile(os.path.join(all_image_path, png_name), os.path.join(test_image_path, png_name))
+
+def main():
+    # copy_test_image()
+    script_path = os.getcwd()
+    test_image_path = os.path.join(script_path, "VOCdevkit/VOC2007/ImageSets/testImages/*.png")
+    outdir = os.path.join(script_path, "VOCdevkit/VOC2007/testoutput")
+    yolo = YOLO()
+    detect_image(yolo, test_image_path, outdir)
+
+if __name__ == "__main__":
+    main()
